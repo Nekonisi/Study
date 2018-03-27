@@ -1,0 +1,67 @@
+<h1 id="年-2月-7日-水曜日-093720">2018年 2月 7日 水曜日 09:37:20</h1>
+<h2 id="午前の作業目標">午前の作業目標</h2>
+<ul>
+<li>ボタンの作成、配置</li>
+<li>ラジオボタンの作成、配置</li>
+</ul>
+<h2 id="午後の作業目標">午後の作業目標</h2>
+<ul>
+<li>コード確認</li>
+<li>動作確認</li>
+<li>提出</li>
+</ul>
+<hr />
+<h3 id="ボタンの作成配置">ボタンの作成、配置</h3>
+<h4 id="確認項目">確認項目</h4>
+<h5 id="ボタンの個数は">ボタンの個数は?</h5>
+<p>-&gt; 13個(BTN_MAXの個数)</p>
+<h5 id="ボタン押下時の挙動は">ボタン押下時の挙動は?</h5>
+<p>-&gt; actionComandプロパティにiLoopのカウントを格納 -&gt; unitbtn_actionPerformed関数に処理が記述されている。</p>
+<ul>
+<li>unitbtn_actionPerformed関数の処理内容は? -&gt; 押下されたボタンの有効無効を切り替える</li>
+</ul>
+<p>-&gt; 関数の引数として、オブジェクトは渡せるのか？ -&gt; 参考にしているソースではどのように実装しているか？</p>
+<ul>
+<li>参考にしているソースではどのように実装しているか？ -&gt; メモリに書き込みを行っている -&gt; 実装したい機能とは異なる</li>
+</ul>
+<p>-&gt; 関数の引数として、オブジェクトは渡せるのか？ -&gt; ( ダメなら、onClickedの中に判定も込みで記述を行うこと) -&gt; 渡せる。 なんなら<code>this</code>でも実装可能</p>
+<h5 id="bunitisselectiselectidxの使用方法を確認する">bUnitIsSelect[iSelectIdx]の使用方法を確認する</h5>
+<ul>
+<li>送信文字列にぶち込むときに配列を使用して値を格納している。</li>
+</ul>
+<h4 id="事実">事実</h4>
+<h5 id="for文で回す時ボタンの処理について">for文で回す時ボタンの処理について</h5>
+<ul>
+<li><code>jbunit()</code>でbtnTestをnewする。</li>
+<li>Ｍｅｍｌｉｎｋからの受信処理(機物選択読み込み)で画像と値を設定する。</li>
+</ul>
+<h6 id="メモリへの書き込み処理について">メモリへの書き込み処理について</h6>
+<ul>
+<li><p>iSaveNoには何が入っているか？</p>
+<p>// 各ユニット選択状態の iOutDT[] 配列への書き込み位置 // DF, RF, SHUTTER, PH, WH, BH, RS, DTH, TH AF CF IF FNL final static int iSaveNo[] = { 3, 4, 2, 5, 6, 7, 8, 9, 10,12,13,14,15 };</p></li>
+<li>bUnitIsSelectには何が入っているか？</li>
+<li>描画したユニットの選択状態</li>
+<li><p>描画したユニットの配列、及び並び順は下記の通り</p>
+<pre><code>    0 DF
+    1 RF
+    2 先端シャッタ
+    3 PH
+    4 WH
+    5 BH
+    6 RS
+    7 DTH
+    8 TH
+    9 AF
+    10 CF
+    11 IF
+    12 FNL</code></pre></li>
+<li><p>bUnitIsSelectとiSaveNoの関係性は?</p></li>
+<li><p>下記のコードの意味について考える。</p>
+<p>if (bUnitIsSelect[i] == true) { // 選択状態 iOutDt[iSaveNo[i]] = 1; }</p></li>
+</ul>
+<p>-&gt; DFの時は、iOutDt[3]に書き込み、RFの時は、iOutDt[4]に書き込み…</p>
+<h5 id="ボタンの配置について">ボタンの配置について</h5>
+<ul>
+<li><p>ボタンの配置の10以降をセットしても変わらない -&gt; 同じ位置に上書かれている？</p></li>
+<li><p>それを確認するために、10 11 12をそれぞれTrue Falseにして表示を確認してみる。</p></li>
+</ul>

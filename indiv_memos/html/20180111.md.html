@@ -1,0 +1,57 @@
+<h1 id="vim">vim</h1>
+<h2 id="インデント">インデント</h2>
+<pre><code>コマンド    説明
+=   選択行のインデント修正
+ctrl-t, ctrl-d  挿入モードでインデントを追加/削除
+&gt;&gt;  インデント
+&lt;&lt;  インデントを削除
+:set shiftwidth=4   インデント幅をスペース4つ分にする
+:set autoindent オートインデントをON
+:set smartindent    スマートなオートインデントをON</code></pre>
+<h1 id="java">Java</h1>
+<h2 id="rectangle">Rectangle</h2>
+<ul>
+<li>Rectangle=長方形</li>
+</ul>
+<p><code>// 座標 (a,b)に(幅=c、高さ=d)のRectangleを生成</code>Rectangle hoge = new Rectangle(a,b,c,d)`</p>
+<h2 id="window.setboundsint-x-int-y-int-width-int-height">Window.setBounds(int x, int y, int width, int height)</h2>
+<ul>
+<li>位置の調整 &amp; サイズ変更</li>
+<li>JFrameにも適応可能</li>
+</ul>
+<h2 id="window.setsizeint-width-int-height">Window.setSize(int width, int height)</h2>
+<ul>
+<li>サイズ変更</li>
+<li>JFrameにも適応可能</li>
+</ul>
+<h1 id="bevelborder">BevelBorder</h1>
+<ul>
+<li>bevel=斜面</li>
+<li><p>窪みを描画する</p>
+<p>クラス BevelBorder java.lang.Object 上位を拡張 javax.swing.border.AbstractBorder 上位を拡張 javax.swing.border.BevelBorder —</p></li>
+</ul>
+<h1 id="qt">Qt</h1>
+<h2 id="loaderの使い方">Loaderの使い方</h2>
+<p>必要とされたときに、コンポーネントを作成することができる。</p>
+<pre><code>import QtQuick 2.0
+
+Item {
+    width: 200; height: 200
+
+    Loader { id: pageLoader }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: pageLoader.source = &quot;Page1.qml&quot;
+    }
+}
+
+</code></pre>
+<h1 id="その他">その他</h1>
+<h2 id="jspとは">JSPとは</h2>
+<pre><code>Webサーバ（ホームページのファイルを置くサーバ）上でお仕事をするJavaのプログラムで、HTMLファイルとJavaのプログラムが合体したもの</code></pre>
+<h2 id="進数のカラーコードの意味">16進数のカラーコードの意味</h2>
+<ul>
+<li>#000000= RGB(0,0,0)</li>
+<li>RGBを16進数で表記しているだけ</li>
+</ul>
