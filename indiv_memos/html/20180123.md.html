@@ -1,0 +1,60 @@
+<h1 id="年-1月-23日-火曜日">2018年 1月 23日 火曜日</h1>
+<h2 id="qt">Qt</h2>
+<h3 id="modelの使い方">Modelの使い方</h3>
+<pre><code>Item{
+    ListModel{id: hogeModel}
+
+    ListView{
+id: listView
+        width: 100
+        height: model.count * 50
+
+        model: hogeModel
+        delegate: Rectangle{ //modelの数分ループする
+id: setHogeItem
+        height: 50
+
+        Ilabel {
+id: numberLabel
+        width:50
+        height: 50
+        text: model.no
+        }
+
+    Ilabel {
+id: contentLabel
+        width: 50
+        height: 50
+        text: model.content
+    }
+        }
+
+    function setModel() {
+        hogeModel.clear()
+
+            hogeModel.append({
+                    &quot;no&quot;: &quot;01&quot;
+                    &quot;content&quot;: &quot;TEST&quot;
+                    })
+
+        hogeModel.append({
+                &quot;no&quot;: &quot;02&quot;
+                &quot;content&quot;: &quot;TEST2&quot;
+                })
+
+        hogeModel.append({
+                &quot;no&quot;: &quot;03&quot;
+                &quot;content&quot;: &quot;TEST3&quot;
+                })
+    }
+    }</code></pre>
+<ul>
+<li>たぶんこんな感じ</li>
+</ul>
+<h3 id="vimrcの場所の確認">vimrcの場所の確認</h3>
+<p>vim上で下記のコマンドを実行 <code>:echo $VIM</code></p>
+<h3 id="windows上のvimrcの場所">Windows上のvimrcの場所</h3>
+<p><code>$VIM/_vimrc</code></p>
+<h3 id="chmod-コマンド">chmod コマンド</h3>
+<p><code>chmod 777 -targetFile</code></p>
+<p>権限は下記の順番 - rwx</p>

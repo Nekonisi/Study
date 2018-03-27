@@ -1,0 +1,31 @@
+<h1 id="個人メモ">個人メモ</h1>
+<h2 id="年-1月-22日-月曜日">2018年 1月 22日 月曜日</h2>
+<h3 id="例外処理についてthrow-throwsについて">例外処理について(throw &amp; throwsについて)</h3>
+<h4 id="throw">throw</h4>
+<ul>
+<li><p>例外処理を意図的にぶんなげる。</p>
+<pre><code>  void throwMethod(int num){
+      if(num==0){
+          throw new IllegalArgumentException(&quot;引数の値が不正です。&quot;);
+      }
+  }</code></pre></li>
+</ul>
+<h4 id="throws">throws</h4>
+<ul>
+<li><p>呼び出し元で例外を処理させる。</p>
+<pre><code>  void main(String[] args){
+      try{
+          throwsMethod();
+      }catch(FileNotFoundException e){
+          System.out.println(&quot;ぶんなげられたのをすかさずキャッチ&quot;);
+      }
+  }
+
+  void throwsMethod() throws FileNotFoundException {
+      FileReader r = new FileReader(&quot;Sample.txt&quot;);
+      System.out.println(&quot;ファイルを読み込みました。&quot;);
+  }</code></pre>
+<p>]</p></li>
+</ul>
+<h3 id="findコマンドで指定の拡張子を検索">findコマンドで指定の拡張子を検索</h3>
+<p>find . -name “*.txt&quot;</p>

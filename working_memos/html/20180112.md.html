@@ -1,0 +1,36 @@
+<h1 id="imagebundle">ImageBundle</h1>
+<h2 id="public-interface-imagebundle">public interface ImageBundle</h2>
+<ul>
+<li><p>A tag interface that is used in the generation of image bundles. An image bundle is a composition of multiple images into a single large image, along with an interface for accessing a specific image’s prototype from within the composition.</p></li>
+<li><p>要は大きな画像に小さな画像を詰め込んでいく？</p></li>
+<li><p>google Web tool Kitとか出てきたから、googleが提供しているライブラリなのかな？</p>
+<pre><code>  IButton1 {//機物選択
+      id: btnCH
+      width: pnlButtonPanel.width *0.8
+      height: pnlButtonPanel.height * 0.2
+      enabled: true
+      icon1Out: &quot;../itps/images/icoProdSet.png&quot;
+      icon1Up: &quot;../itps/images/icoProdSet.png&quot;
+
+      icon1{//アイコン設定
+          id: btnCHIcon
+          // ボタンの真ん中に配置
+          x: (btnCH.width - icon1.width)/2
+          y: (btnCH.height - icon1.height)/2
+          fillMode: Image.pad
+      }
+
+      label1{//ラベル設定
+          id: btnProdsetLabel
+          anchors.topMargin: btnCH.height
+          //text: Tr.text(&quot;R_IPS_TEXT_HOME_4_KEY_PRESET&quot;)
+          text: Tr.text(&quot;機物選択&quot;)
+      }
+
+      onClicked: {
+          ngRcuItps.goToHomeOrError()
+      }
+  }</code></pre>
+<p>}</p></li>
+</ul>
+<p>}</p>

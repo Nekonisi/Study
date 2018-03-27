@@ -1,0 +1,47 @@
+<h1 id="個人メモ">個人メモ</h1>
+<h2 id="vim">vim</h2>
+<h3 id="画面分割">画面分割</h3>
+<h4 id="横に画面分割">横に画面分割</h4>
+<ul>
+<li>Ctrl+w s</li>
+</ul>
+<h4 id="縦に画面分割">縦に画面分割</h4>
+<ul>
+<li>Ctrl+w v</li>
+</ul>
+<h2 id="qt">Qt</h2>
+<h3 id="画像のアスペクト比について">画像のアスペクト比について</h3>
+<ul>
+<li><a href="https://doc-snapshots.qt.io/qt5-dev/qml-qtquick-image.html">Image QML Type | Qt Quick 5.11</a></li>
+</ul>
+<h2 id="その他">その他</h2>
+<ul>
+<li><a href="http://fromkato.com/color/color.php">違いがわかる色見本</a></li>
+<li><p>引数に色コードを入力するとサンプル表示</p>
+<pre><code>  addRcvListenerの引数の定義としては、ishida.utilities.MlnkEventListenerを最低限定義することという前提
+  無名クラス
+  本来であればインターフェースを実装した、クラスを用意する必要があるが、
+  無名クラスを利用すると別ファイルを用意しなくても、インターフェースを実装したクラスを用意することができる。
+  つまり、無名クラスは一時的にクラスオブジェクトを生成する手段である。
+
+  Javaの言語使用として
+   - mlnkFDC_SW_の中で発生したイベントを検知したい
+      - しかし、発生イベントのフォーマットが決まっていない。
+
+   - mlnkFDC_SW_としては、イベントを検知するために どのような引数のメソッドを用意すればいいのかを教えてあげたい。
+   - こういうメソッドをどこかで定義してあげたい
+   - 今回場合は、インターフェースとして定義してあげている。
+   - こういうメソッド(ishida.utilities.MlnkEventListener(インタフェース)のmemlnkRcvPerformedを実装してくれれば、教えてあげれるよ。)
+
+   addRcvListenerの中で、教えてほしい人リストを保持しているはず。
+   mlnkFDC_SWからすると、教えてほしい人のクラスの一覧はishida.utilities.MlnkEventListener
+   送り先はわからないけど、送り方はわかる。
+   インタフェースとは自販機の前面(裏側はよくわかないけど、押したら出てくる)
+  memlnkRcvPerformed
+  memlnkRcvPerformedは各々で処理を記述することができる。</code></pre></li>
+</ul>
+<p>mlnkFDC_SW_.addRcvListener(new ishida.utilities.MlnkEventListener(){ public void memlnkRcvPerformed(String rRcvMsg){ rcvFdcSwReadRet( rRcvMsg );//どぶに捨てる 飲む等 } });</p>
+<h2 id="java">Java</h2>
+<ul>
+<li>synchronized 排他制御</li>
+</ul>

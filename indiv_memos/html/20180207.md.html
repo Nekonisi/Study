@@ -1,0 +1,45 @@
+<h1 id="年-2月-5日-月曜日-111116">2018年 2月 5日 月曜日 11:11:16</h1>
+<h2 id="java">Java</h2>
+<h3 id="javaにおけるcastについて">JavaにおけるCastについて</h3>
+<ul>
+<li>Javaには変数のデータ型を変換することができる“型キャスト”と呼ばれる機能が存在する。</li>
+</ul>
+<h4 id="書式">書式</h4>
+<ul>
+<li><code>(type)var</code></li>
+</ul>
+<h5 id="例">例</h5>
+<pre><code>int integerVariant=0;
+(String)integerVariant;</code></pre>
+<h4 id="注意点">注意点</h4>
+<ul>
+<li>小さな型を大きな型に変換することは可能である。(拡大変換)</li>
+<li>しかし、大きな型を小さな型に変換する際には、<em>正しく変換されるとは限らない</em>のである(縮小変換)</li>
+</ul>
+<h4 id="注意点2">注意点2</h4>
+<p>下記は可能 (※ HamsterはAnimalのサブクラス)</p>
+<pre><code>Animal animalHamster = new Hamster();
+Hamster hamukichi = (Hamster)animalHamster;</code></pre>
+<p>下記は不可能 (※ tamaの実態はcatオブジェクトであるため)</p>
+<pre><code>Animal tama = new Cat();
+Hamster hamukichi = (hamster)tama;</code></pre>
+<p>下記で解消可能</p>
+<pre><code>Animal tama = new Cat();
+if ( cat interfaceof Hamster) {
+    Hamster hamukichi = (Hamster)tama;
+}</code></pre>
+<h2 id="三項演算子">三項演算子</h2>
+<ul>
+<li>ifの省略形だよ</li>
+</ul>
+<h3 id="書式-1">書式</h3>
+<ul>
+<li><code>条件式 ? Trueの場合に実行する式 : Falseの場合に実行する式</code></li>
+</ul>
+<hr />
+<h2 id="indicatorstateについて">indicatorStateについて</h2>
+<ul>
+<li>indicatorState -&gt; 状態インジケータ</li>
+</ul>
+<hr />
+<h1 id="年-2月-7日-水曜日-091938">2018年 2月 7日 水曜日 09:19:38</h1>

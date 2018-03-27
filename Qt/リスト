@@ -1,0 +1,19 @@
+# まとめるコンポーネントリスト
+
+	- MouseEvent
+	- Flickable
+	- GridView
+	- Image
+	- Item
+	- ListView
+	 - ListModel
+	- Loader
+	- MouseArea
+	- Column
+	- Grid
+	- Row
+	- Rectangle
+	- Repeater
+	- Text
+
+modelに関してはListModelについてまとめる。
