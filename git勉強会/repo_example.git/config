@@ -4,3 +4,6 @@
 	bare = true
 	symlinks = false
 	ignorecase = true
+	sharedrepository = 1
+[receive]
+	denyNonFastforwards = true
