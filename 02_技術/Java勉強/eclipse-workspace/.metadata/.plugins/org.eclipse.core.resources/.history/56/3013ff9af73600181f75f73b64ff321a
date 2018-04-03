@@ -1,0 +1,56 @@
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream.GetField;
+
+/**
+ * @author nl_konishi
+ *
+ */
+public class Step6 {
+
+
+
+	/**
+	 *  Step6のメインメソッド
+	 *  自分自身をインスタンス化し、exec()メソッドを実行する。
+	 *  @author nl_konishi
+	 *  
+	 */ 
+	public static void main() {
+		Step6 step6=new Step6();
+		step6.exec();
+	}
+
+	/**
+	 * Step6のメイン処理が記述されたメソッド
+	 * @author nl_konishi
+	 */
+	private void exec() {
+		
+		// 最初のメッセージを表示
+		System.out.println("＊＊□商品レコード読込みプログラム□＊＊\r\n");
+		
+		/*
+		 =================================================================================================
+		  (2)各人の作業用フォルダ内の商品レコードファイル「syohin.txt」を 開き（オープンモードは読込み）、商品名、単価、売上数量を取得する。
+		 =================================================================================================
+		 */
+		
+
+		/*
+		 * ◇ファイルオープンに失敗した場合はエラーメッセージを出力して処理終了。 （出力内容は図２を参照）
+		 */
+
+	}
+	
+	private String getInformation() {
+	}
+
+	private void name() {
+		
+	}
+}

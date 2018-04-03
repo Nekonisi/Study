@@ -45,6 +45,13 @@
 		<item value="350" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
 		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
 	</section>
+	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
+		<item value="908" key="DIALOG_WIDTH"/>
+		<item value="1|メイリオ|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|メイリオ" key="DIALOG_FONT_NAME"/>
+		<item value="801" key="DIALOG_HEIGHT"/>
+		<item value="514" key="DIALOG_X_ORIGIN"/>
+		<item value="14" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
 		<item value="true" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
 		<item value="350" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
@@ -57,6 +64,34 @@
 		<item value="400" key="height"/>
 	</section>
 	<section name="CallHierarchySearchScope">
+	</section>
+	<section name="javadoc">
+		<item value="public" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="C:\Users\nl_konishi\Documents\GitHub\Study\02_技術\Java勉強\eclipse-workspace\Before_Joining_Practice\javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="C:\Program Files\Java\jdk-9.0.1\bin\javadoc.exe" key="javadoc_command_history"/>
+		<item value="9" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="C:\Users\nl_konishi\Documents\GitHub\Study\02_技術\Java勉強\eclipse-workspace\Before_Joining_Practice\doc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+		</section>
+	</section>
+	<section name="SourceActionDialog.methods">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
 	</section>
 	<section name="BreadcrumbItemDropDown">
 	</section>
@@ -218,6 +253,10 @@
 		</section>
 	</section>
 	<section name="completion_proposal_size">
+	</section>
+	<section name="AddGetterSetterDialog">
+		<item value="false" key="SortOrdering"/>
+		<item value="false" key="RemoveFinal"/>
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>

@@ -1,0 +1,10 @@
+
+/**
+ * @author nl_konishi
+ * 商品レコードを格納するクラス
+ */
+public class ProductRecord {
+	
+	
+
+}

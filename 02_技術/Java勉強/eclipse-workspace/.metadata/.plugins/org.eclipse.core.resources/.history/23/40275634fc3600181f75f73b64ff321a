@@ -1,0 +1,10 @@
+package com.nekonisi.sample6;
+
+public class Exec {
+	
+	public void exec() {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+}
