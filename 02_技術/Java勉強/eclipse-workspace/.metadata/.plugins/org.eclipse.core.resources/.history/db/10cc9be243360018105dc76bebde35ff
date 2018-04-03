@@ -1,0 +1,7 @@
+
+public class Step1 {
+	public static void main() {
+		System.out.println("‰‰K1");
+	}
+
+}

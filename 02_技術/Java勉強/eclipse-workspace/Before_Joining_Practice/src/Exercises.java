@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Exercises {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		// 続けるかどうかのフラグ
+		boolean continueFlg=false;
+		
+		do{
+
+		System.out.println("実行したい演習番号を入力してください。");
+		System.out.println("※ 0を入力すると終了します。");
+
+		// キーボードからの読込
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		String inputString = scan.next();
+		
+		if(inputString.matches("[0-9]")) {
+			System.out.println("演習番号"+ inputString +"を実行します。");
+
+			switch (inputString) {
+			case "1":
+				Step1.main();
+				break;
+			case "2":
+				Step2.main();
+				break;
+			case "3":
+				Step3.main();
+				break;
+			case "4":
+				Step4.main();
+				break;
+			case "5":
+				Step5.main();
+				break;
+			case "6":
+				Step6.main();
+				break;
+			case "7":
+				Step7.main();
+				break;
+			case "8":
+				Step8.main();
+				break;
+			case "9":
+				Step9.main();
+				break;
+			default:
+				break;
+			}
+			System.out.println("プログラムを終了します。");
+			System.exit(0);
+		} else {
+			System.out.println("入力値が不正です。\r\n");
+			continueFlg=true;
+		}
+			
+		} while(continueFlg) ;
+	}
+}

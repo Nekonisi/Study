@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Exercises {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		System.out.println("実行したい演習番号を入力してください。");
+		System.out.println("※ 0を入力すると終了します。");
+
+		// キーボードからの読込
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		String inputString = scan.next();
+		
+		if(inputString.matches("[0-9]")) {
+			System.out.println("演習番号"+ inputString +"を実行します。");
+			Class cls= Class.forName("Step" + inputString);
+			step4.main();
+			System.out.println("プログラムを終了します。");
+			System.exit(0);
+		} else {
+			System.out.println("入力値が不正です。");
+		}
+	}
+}

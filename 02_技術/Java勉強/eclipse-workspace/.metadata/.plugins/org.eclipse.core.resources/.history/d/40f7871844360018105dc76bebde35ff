@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+import org.omg.CORBA.portable.ApplicationException;
+
+public class Exercises {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		System.out.println("実行したい演習番号を入力してください。");
+		System.out.println("※ 0を入力すると終了します。");
+
+		// キーボードからの読込
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		String inputString = scan.next();
+		
+		if(inputString.matches("[0-9]")) {
+			System.out.println("演習番号"+ inputString +"を実行します。");
+
+			switch (inputString) {
+			case "1":
+				Step1.main();
+				break;
+			case "2":
+				step2.main();
+				break;
+			case "3":
+				step3.main();
+				break;
+			case "4":
+				step4.main();
+				break;
+			case "5":
+				step5.main();
+				break;
+			case "6":
+				step6.main();
+				break;
+			case "7":
+				step7.main();
+				break;
+			case "8":
+				step8.main();
+				break;
+			case "8":
+				step9.main();
+				break;
+			default:
+				throw new Exception("例外");
+				break;
+			}
+			System.out.println("プログラムを終了します。");
+			System.exit(0);
+		} else {
+			System.out.println("入力値が不正です。");
+		}
+	}
+}

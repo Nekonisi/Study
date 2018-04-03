@@ -1,0 +1,55 @@
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Scanner;
+
+public class Exercises {
+
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) throws ClassNotFoundException {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		System.out.println("実行したい演習番号を入力してください。");
+		System.out.println("※ 0を入力すると終了します。");
+
+		// キーボードからの読込
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		String inputString = scan.next();
+		
+		if(inputString.matches("[0-9]")) {
+			System.out.println("演習番号"+ inputString +"を実行します。");
+			@SuppressWarnings("unused")
+			Class<?> cls= Class.forName("Step" + inputString);
+			Method method;
+			try {
+				method = cls.getMethod("main");
+			} catch (NoSuchMethodException e1) {
+				// TODO 自動生成された catch ブロック
+				e1.printStackTrace();
+			} catch (SecurityException e1) {
+				// TODO 自動生成された catch ブロック
+				e1.printStackTrace();
+			}
+			try {
+				method.invoke(cls.newInstance());
+			} catch (IllegalAccessException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+			step4.main();
+			System.out.println("プログラムを終了します。");
+			System.exit(0);
+		} else {
+			System.out.println("入力値が不正です。");
+		}
+	}
+}
