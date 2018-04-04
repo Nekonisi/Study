@@ -7,8 +7,8 @@ package com.nekonisi.sample6;
 public class Step6 {
 
 	/**
-	 * @param args コマンドライン引数
-	 * Step6のメインクラス
+	 * @param args 繧ｳ繝槭Φ繝峨Λ繧､繝ｳ蠑墓焚
+	 * Step6縺ｮ繝｡繧､繝ｳ繧ｯ繝ｩ繧ｹ
 	 */
 	public static void main(String[] args) {
 		try {
@@ -17,7 +17,7 @@ public class Step6 {
 			} else if (args.length == 0) {
 				
 			} else {
-				throw new NumberFormatException("コマンドライン引数が多すぎます。死ね");
+				throw new NumberFormatException("繧ｳ繝槭Φ繝峨Λ繧､繝ｳ蠑墓焚縺悟､壹☆縺弱∪縺吶よｭｻ縺ｭ");
 			}
 			
 			// Step6 start here
@@ -26,8 +26,8 @@ public class Step6 {
 					
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("例外が発生したんで、詳細表示してから、プログラム終了するわ。\r\n\r\n");
-			System.out.println("ほな、また……。\r\n\r\n");
+			System.out.println("萓句､悶′逋ｺ逕溘＠縺溘ｓ縺ｧ縲∬ｩｳ邏ｰ陦ｨ遉ｺ縺励※縺九ｉ縲√�励Ο繧ｰ繝ｩ繝邨ゆｺ�縺吶ｋ繧上つ･rﾂ･nﾂ･rﾂ･n");
+			System.out.println("縺ｻ縺ｪ縲√∪縺溪ｦ窶ｦ縲つ･rﾂ･nﾂ･rﾂ･n");
 			e.printStackTrace();
 			return;
 		}

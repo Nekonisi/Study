@@ -4,28 +4,39 @@ import java.io.FileNotFoundException;
 
 /**
  * @author nl_konishi
- * Step6“à‚ÌÀÛ‚Ìˆ—‚ğ‹Lq‚·‚éƒNƒ‰ƒX
+ * Step6å†…ã®å®Ÿéš›ã®å‡¦ç†ã‚’è¨˜è¿°ã™ã‚‹ã‚¯ãƒ©ã‚¹
  */
 public class Exec {
 	
 	/**
-	 * Step6‚Ìˆ—‚ğ‹Lq‚·‚éƒƒ\ƒbƒh
+	 * Step6ã®å‡¦ç†ã‚’è¨˜è¿°ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 	 */
 	public void exec() throws FileNotFoundException{
 		
 		try {
-			System.out.println("Step6 ¤•iƒŒƒR[ƒh“Ç‚İƒvƒƒOƒ‰ƒ€‚ğŠJn‚µ‚Ü‚·B...\r\n");
+			System.out.println("Step6 å•†å“ãƒ¬ã‚³ãƒ¼ãƒ‰èª­è¾¼ã¿ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’é–‹å§‹ã—ã¾ã™ã€‚...Â¥rÂ¥n");
 			
-			// ¤•iƒŒƒR[ƒhŒÄ‚Ño‚µ—p‚ÌƒNƒ‰ƒX‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»
+			// å•†å“ãƒ¬ã‚³ãƒ¼ãƒ‰å‘¼ã³å‡ºã—ç”¨ã®ã‚¯ãƒ©ã‚¹ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
 			ProductRecord productRecord = new ProductRecord();
 			productRecord.ReadFile();
-			System.out.println(productRecord.getReadString(1));
+			productRecord.SetProperty();
+			
+			int displayPrice=0;
+			
+			for (int i=0; i<productRecord.getRowCount(); i++) {
+				// å•†å“åã‚’è¡¨ç¤º
+				System.out.print(productRecord.getProductName(i));
+				
+				// è¡¨ç¤ºç”¨ã«å˜ä¾¡ * å£²ä¸Šæ•°é‡ã‚’è¨ˆç®—
+				displayPrice=Integer.parseInt(productRecord.getSales(i)) * Integer.parseInt(productRecord.getUnitPrice(i));
+				System.out.println(" Â¥Â¥" + displayPrice);
+				
+			}
 			
 		} catch (Exception e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
-			System.out.println("Step6‚ÌÀs’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B");
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
+			System.out.println("Step6ã®å®Ÿè¡Œä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚");
 			e.printStackTrace();
-			throw e;
 		} 
 	}
 }
