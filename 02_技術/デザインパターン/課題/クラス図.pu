@@ -1,0 +1,53 @@
+
+PlantUML用のドキュメント
+
+@startuml
+
+title 課題
+
+class SuperMarket {
+	-sales: int
+	-stock: int
+	+getSales()
+	+getStock()
+	+order()
+}
+
+class wholesaler{
+	-stock: List<Bread>
+	+order()
+	+delivery()
+}
+
+class BreadFactory {
+	-stock: 
+	+makeBread(): Bread
+	+delivery()
+}
+
+interface Bread {
+ +getPrice()
+ +getKind()
+}
+
+class BeanPasteBread {
+	-price: int
+}
+
+class PlainBread{
+	-price: int
+}
+
+SuperMarket --> wholesaler : 発注
+SuperMarket <-- wholesaler : 納品
+
+Bread <|-- BeanPasteBread
+Bread <|-- PlainBread
+
+BreadFactory --> Bread
+BreadFactory <-- Bread
+
+BreadFactory --> wholesaler
+BreadFactory <-- wholesaler
+
+@enduml
