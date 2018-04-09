@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="リソース &apos;ishida&apos; を削除" deleteContents="false" description="リソース &apos;ishida&apos; を削除" element1="/ishida" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1516755254214"/>&#x0A;<refactoring comment="リソース &apos;ITPS_SRC_W0336A&apos; を削除" deleteContents="false" description="リソース &apos;ITPS_SRC_W0336A&apos; を削除" element1="/ITPS_SRC_W0336A" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1516755706364"/>
-</session>
