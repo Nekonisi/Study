@@ -11,6 +11,28 @@ public class Knapsack {
 	private int capacity;
 
 	/**
+	 * 容量制限の小問題を解いたときに最後に選んだ品物を保持する配列
+	 */
+	private Item[] choise;
+
+	/**
+	 * @return 容量制限の小問題を解いたときに最後に選んだ品物を保持する配列
+	 */
+	public Item[] getChoise() {
+		return choise;
+	}
+
+	/**
+	 * @param Item
+	 *            容量制限の小問題を解いたときに最後に選んだ品物
+	 * @param size
+	 *            容量制限
+	 */
+	public void setChoise(Item Item, int size) {
+		this.choise[size] = Item;
+	}
+
+	/**
 	 * 容量制限が添字の時の、小問題の価値合計を保持する配列
 	 */
 	private int[] maxValue;
@@ -19,6 +41,9 @@ public class Knapsack {
 		return capacity;
 	}
 
+	/**
+	 * @return 小問題の価値合計を保持する配列
+	 */
 	public int[] getMaxValue() {
 		return maxValue;
 	}
@@ -37,9 +62,10 @@ public class Knapsack {
 	 * @param capacity
 	 *            ナップザックの容量制限
 	 */
-	private Knapsack(int capacity) {
+	public Knapsack(int capacity) {
 		this.capacity = capacity;
 		this.maxValue = new int[capacity];
+		this.choise = new Item[capacity];
+		System.out.println("大きさ[" + capacity + "]のナップザックを作成しました。");
 	}
-
 }

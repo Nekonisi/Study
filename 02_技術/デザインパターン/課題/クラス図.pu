@@ -23,13 +23,13 @@ Class BreadOrder {
 }
 
 Enum BreadKind {
-	BeanPasteBread
-	PlainBread
+	BEAN_PASTE_BREAD
+	PLAIN_BREAD
 }
 
 class WholeSaler{
 	-wholeSaler wholeSaler
-	-getWholeSaler(): WholeSeler
+	+getWholeSaler(): WholeSeler
 	+order(List<BreadOrder>):List<Bread>
 }
 
@@ -41,17 +41,17 @@ class BreadFactory {
 }
 
 interface Bread {
- +getKind()
+ +getKind(): String
 }
 
 class BeanPasteBread {
-	-kind: String
+	-kind: BreadKind
 	+getKind(): String
 	+toString(): String
 }
 
 class PlainBread{
-	-kind: String
+	-kind: BreadKind
 	+getKind(): String
 	+toString(): String
 }
@@ -71,5 +71,5 @@ BreadFactory <-- WholeSaler: 発注
 
 BeanPasteBread --> BreadKind: 所属
 PlainBread --> BreadKind: 所属
-@enduml
 
+@enduml
