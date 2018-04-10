@@ -6,37 +6,37 @@ PlantUML用のドキュメント
 title 課題
 
 class SuperMarket {
-	-superMarket: SuperMarket
-	-stock: List<Bread>
-	-superMarket() : SuperMarket
-	-getinstance() : SuperMarket
-	+getSales(): int
-	+getStock(): String
-	+checkStock(List<Bread>): void
+	-SuperMarket superMarket
+	-List<Bread> stock
+	+getSuperMarketInstance(): SuperMarket
+	+getStock(): List<Bread>
+	+order(int[]): void
+	-createBreadOrder(int[]): List<BreadOrder>
 }
 
 Class BreadOrder {
 	-Enum kind
-	-int orderNum
-	+order(Enum,int)
-	+getKind() :Enum
-	+getOrderNum(): int
+	-int orderNumber
+	+BreadOrder(String kind,int orderNumber)
+	+getKind() :BreadKind
+	+getOrderNumber(): int
+}
+
+Enum BreadKind {
+	BeanPasteBread
+	PlainBread
 }
 
 class WholeSaler{
-	-wholeSaler: wholeSaler
-	-stock: List<Bread>
-	-wholeSeler()
-	+getinstance(): WholeSeler
+	-wholeSaler wholeSaler
+	-getWholeSaler(): WholeSeler
 	+order(List<BreadOrder>):List<Bread>
 }
 
 class BreadFactory {
-	-breadFactory: BreadFactory
-	-stock: List<Bread>
+	-BreadFactory breadFactory
+	-List<Bread> stock
 	+getinstance(): BreadFactory
-	-breadFactory() : BreadFactory
-	-makeBread(String): Bread
 	+makeBreads(List<BreadOrder>): List<Bread>
 }
 
@@ -56,6 +56,7 @@ class PlainBread{
 SuperMarket --> WholeSaler: 発注
 SuperMarket <-- WholeSaler: 納品
 SuperMarket --> BreadOrder : 作成
+BreadOrder --> BreadKind: 参照
 
 Bread <|-- BeanPasteBread: 実装
 Bread <|-- PlainBread: 実装
