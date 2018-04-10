@@ -16,15 +16,27 @@ import JavaChallnege.bread.PlainBread;
  *         ※ メモ: シングルトンパターンはプログラム中にインスタンスが唯一であることを保証するデザイン
  */
 public class BreadFactory {
-	/**
-	 * パン工場のインスタンスを作成
+
+	/*
+	 * ==============================================================
+	 * Singletonパターンで設計する
+	 * ==============================================================
 	 */
-	private static final BreadFactory instance = new BreadFactory();
+	private static BreadFactory breadFactory = null;
 
 	/**
-	 * 現在のストック
+	 * @return BreadFactoryのインスタンスを取得
 	 */
-	private List<Bread> stock;
+	public static BreadFactory getBreadFactory() {
+
+		if (BreadFactory.breadFactory != null) {
+			return BreadFactory.breadFactory;
+		}
+
+		BreadFactory.breadFactory = new BreadFactory();
+
+		return BreadFactory.breadFactory;
+	}
 
 	/**
 	 * コンストラクタ
@@ -33,20 +45,18 @@ public class BreadFactory {
 	}
 
 	/**
-	 * @return 自分自身のオブジェクト
-	 * 
-	 *         ※ シングルトンパターンの実現
+	 * 現在のストック
 	 */
-	public static BreadFactory getInstance() {
-		return BreadFactory.instance;
-	}
+	private List<Bread> stock;
 
 	/**
 	 * @param kind
-	 *            パンの種別
+	 *            作成するパンの種別
 	 * 
 	 * @return 作成したパン
 	 * @throws Exception
+	 * 
+	 *             引数で受け取った種類のパンオブジェクトを作成する。
 	 */
 	private Bread makeBread(BreadKind kind) throws Exception {
 
@@ -69,8 +79,10 @@ public class BreadFactory {
 	 * @param order
 	 *            注文内容のリスト
 	 * 
-	 * @return 注文したパン(リスト型)
+	 * @return 作成したパンのリスト
 	 * @throws Exception
+	 * 
+	 *             パンの注文票オブジェクトのリスト型を受け取って、パンのリストを返します。
 	 */
 	public List<Bread> makeBreads(List<BreadOrder> breadOrderList) throws Exception {
 

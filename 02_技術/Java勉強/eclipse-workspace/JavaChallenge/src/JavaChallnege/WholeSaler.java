@@ -18,13 +18,19 @@ public class WholeSaler {
 	 * Singletonパターンで設計する
 	 * ==============================================================
 	 */
-	private static final WholeSaler instance = new WholeSaler();
+	private static WholeSaler wholeSaler = null;
 
 	/**
 	 * @return 自分自身のオブジェクト
 	 */
-	public static WholeSaler getInstance() {
-		return WholeSaler.instance;
+	public static WholeSaler getWholeSaler() {
+
+		if (WholeSaler.wholeSaler != null) {
+			return WholeSaler.wholeSaler;
+		}
+
+		WholeSaler.wholeSaler = new WholeSaler();
+		return WholeSaler.wholeSaler;
 	}
 
 	/**
@@ -35,7 +41,7 @@ public class WholeSaler {
 	 * @throws Exception
 	 */
 	public List<Bread> order(List<BreadOrder> breadOrderList) throws Exception {
-		BreadFactory fab = BreadFactory.getInstance();
+		BreadFactory fab = BreadFactory.getBreadFactory();
 		List<Bread> breads = fab.makeBreads(breadOrderList);
 		return breads;
 	}

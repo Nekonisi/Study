@@ -21,7 +21,7 @@ public class SuperMarket {
 	private static SuperMarket superMarket = null;
 
 	/**
-	 * @return 自分自身のオブジェクト
+	 * @return SuperMarketのインスタンス
 	 */
 	public static SuperMarket getSuperMarketInstance() {
 
@@ -34,11 +34,6 @@ public class SuperMarket {
 	}
 
 	/**
-	 * パンの在庫リスト
-	 */
-	private List<Bread> stock;
-
-	/**
 	 * コンストラクタ
 	 */
 	private SuperMarket() {
@@ -46,19 +41,13 @@ public class SuperMarket {
 	}
 
 	/**
-	 * @return 在庫の情報の文字列
-	 * 
-	 *         当オブジェクトが保持するパンの在庫を文字列として返す
+	 * パンの在庫リスト
 	 */
-	// public String getStock() {
-	// StringBuilder stockStringBuilder = new StringBuilder();
-	// for (Bread bread : this.stock) {
-	// String kind = bread.getKind();
-	// stockStringBuilder.append(kind + "\r\n");
-	// }
-	// return stockStringBuilder.toString();
-	// }
+	private List<Bread> stock;
 
+	/**
+	 * @return パンの在庫リスト
+	 */
 	public List<Bread> getStock() {
 		return this.stock;
 	}
@@ -70,7 +59,7 @@ public class SuperMarket {
 	 */
 	public void order(int[] breadOrder) throws Exception {
 		List<BreadOrder> breadorders = createBreadOrder(breadOrder);
-		WholeSaler wholeSaler = WholeSaler.getInstance();
+		WholeSaler wholeSaler = WholeSaler.getWholeSaler();
 
 		this.stock = wholeSaler.order(breadorders);
 	}

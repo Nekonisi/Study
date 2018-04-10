@@ -2,12 +2,46 @@ package JavaChallnege;
 
 import java.util.Scanner;
 
+/**
+ * @author nl_konishi パン作成システム
+ * 
+ *         シングルトンパターンで設計
+ */
 public class MakeBreadSystem {
+
+	/*
+	 * ==============================================================
+	 * Singletonパターンで設計する
+	 * ==============================================================
+	 */
+
+	private static MakeBreadSystem makeBreadSystem = null;
+
+	/**
+	 * @return MakeBreadSystemのインスタンス
+	 */
+	public static MakeBreadSystem getMakeBreadSystem() {
+
+		if (MakeBreadSystem.makeBreadSystem != null) {
+			return MakeBreadSystem.makeBreadSystem;
+		}
+
+		MakeBreadSystem.makeBreadSystem = new MakeBreadSystem();
+
+		return MakeBreadSystem.makeBreadSystem;
+	}
+
+	/**
+	 * コンストラクタ
+	 */
+	private MakeBreadSystem() {
+
+	}
 
 	/**
 	 * メイン処理
 	 */
-	public static void main(String args[]) {
+	public void exec() {
 		try (Scanner scan = new Scanner(System.in)) {
 			int[] breadOrder = new int[2];
 

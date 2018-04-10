@@ -2,18 +2,33 @@ package JavaChallnege;
 
 import JavaChallnege.bread.BreadKind;
 
+/**
+ * @author nl_konishi
+ * 
+ *         パンの注文表クラス 注文を行うパンの種類と注文数を属性として保持する。
+ * 
+ */
 public class BreadOrder {
 
 	/**
-	 * @author nl_konishi
-	 *
-	 *         パンの種類
+	 * パンの種類
 	 */
 	private BreadKind kind;
 
+	/**
+	 * パンの注文数
+	 */
 	private int orderNumber = 0;
 
-	// TODO 要不要を判断し、不要なら削除すること
+	/**
+	 * @param kind
+	 *            注文するパンの種類
+	 * @param orderNumber
+	 *            注文数
+	 * @throws Exception
+	 * 
+	 *             コンストラクタ
+	 */
 	public BreadOrder(String kind, int orderNumber) throws Exception {
 		switch (kind) {
 		case "あんパン":
@@ -29,13 +44,20 @@ public class BreadOrder {
 		this.orderNumber = orderNumber;
 	}
 
+	/**
+	 * @return パンの種類
+	 * 
+	 *         パンの種類のgetter
+	 */
 	public BreadKind getKind() {
 		return this.kind;
-		// String で返したい場合は
-		// return nthis.kind.name
-		// TODO レビュー前に削除すること
 	}
 
+	/**
+	 * @return パンの注文数
+	 * 
+	 *         パンの注文数のgetter
+	 */
 	public int getOrderNumber() {
 		return this.orderNumber;
 	}
