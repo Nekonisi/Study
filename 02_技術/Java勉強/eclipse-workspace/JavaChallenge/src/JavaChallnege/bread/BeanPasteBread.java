@@ -7,7 +7,7 @@ package JavaChallnege.bread;
  */
 public class BeanPasteBread implements Bread {
 
-	private String kind = "‚ ‚ñƒpƒ“";
+	private static final String KIND = "‚ ‚ñƒpƒ“";
 
 	/*
 	 * (”ñ Javadoc)
@@ -16,7 +16,7 @@ public class BeanPasteBread implements Bread {
 	 */
 	@Override
 	public String getKind() {
-		return this.kind;
+		return BeanPasteBread.KIND;
 	}
 
 	/*
@@ -26,6 +26,6 @@ public class BeanPasteBread implements Bread {
 	 */
 	@Override
 	public String toString() {
-		return this.kind;
+		return BeanPasteBread.KIND;
 	}
 }

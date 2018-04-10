@@ -55,13 +55,15 @@ public class SuperMarket {
 	/**
 	 * @param breadOrder
 	 *            パンの注文リスト(整数型の配列)
+	 * @return 現在のストック
 	 * @throws Exception
 	 */
-	public void order(int[] breadOrder) throws Exception {
+	public List<Bread> order(int[] breadOrder) throws Exception {
 		List<BreadOrder> breadorders = createBreadOrder(breadOrder);
 		WholeSaler wholeSaler = WholeSaler.getWholeSaler();
 
 		this.stock = wholeSaler.order(breadorders);
+		return this.stock;
 	}
 
 	/**

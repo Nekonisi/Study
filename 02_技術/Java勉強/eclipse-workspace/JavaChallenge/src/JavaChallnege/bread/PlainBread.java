@@ -2,15 +2,15 @@ package JavaChallnege.bread;
 
 public class PlainBread implements Bread {
 
-	private String kind = "食パン";
+	private final static String KIND = "食パン";
 
 	@Override
 	public String getKind() {
-		return this.kind;
+		return PlainBread.KIND;
 	}
 
 	@Override
 	public String toString() {
-		return this.kind;
+		return PlainBread.KIND;
 	}
 }

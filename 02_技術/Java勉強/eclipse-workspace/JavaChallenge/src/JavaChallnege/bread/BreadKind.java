@@ -2,7 +2,7 @@ package JavaChallnege.bread;
 
 public enum BreadKind {
 
-	BeanPasteBread("あんパン"), PlainBread("食パン");
+	BEANPASTEBREAD("あんパン"), PLAINBREAD("食パン");
 
 	// フィールドの定義
 	public String name;

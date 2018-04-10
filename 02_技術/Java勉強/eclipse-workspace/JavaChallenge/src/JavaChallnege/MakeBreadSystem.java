@@ -9,6 +9,11 @@ import java.util.Scanner;
  */
 public class MakeBreadSystem {
 
+	/**
+	 * フォーマットチェックの定数
+	 */
+	private final static String FORMATCHECKPATTERN = "[0-9]+";
+
 	/*
 	 * ==============================================================
 	 * Singletonパターンで設計する
@@ -19,6 +24,13 @@ public class MakeBreadSystem {
 
 	/**
 	 * @return MakeBreadSystemのインスタンス
+	 */
+
+	/**
+	 * パン作成システムのインスタンスを生成します。<br>
+	 * <br>
+	 * 
+	 * @return パン作成システムのインスタンス
 	 */
 	public static MakeBreadSystem getMakeBreadSystem() {
 
@@ -35,6 +47,8 @@ public class MakeBreadSystem {
 	 * コンストラクタ
 	 */
 	private MakeBreadSystem() {
+
+		// デフォルトコンストラクタを抑止
 
 	}
 
@@ -64,10 +78,9 @@ public class MakeBreadSystem {
 			breadOrder[1] = Integer.parseInt(inputValue);
 
 			SuperMarket superMarket = SuperMarket.getSuperMarketInstance();
-			superMarket.order(breadOrder);
 
 			System.out.println("在庫を表示");
-			System.out.println(superMarket.getStock());
+			System.out.println(superMarket.order(breadOrder));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -82,7 +95,6 @@ public class MakeBreadSystem {
 	 * 
 	 */
 	private static boolean checkIntegerValue(String value) {
-		String pattern = "[0-9]+";
-		return value.matches(pattern);
+		return value.matches(FORMATCHECKPATTERN);
 	}
 }

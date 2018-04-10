@@ -6,10 +6,12 @@ package JavaChallnege.bread;
  *         パンインターフェース
  */
 public interface Bread {
+
 	/**
-	 * @return パンの種類
+	 * パンの種類を取得する。<br>
+	 * <br>
 	 * 
-	 *         パンの種類を取得する
+	 * @return パンの種類
 	 */
 	String getKind();
 }

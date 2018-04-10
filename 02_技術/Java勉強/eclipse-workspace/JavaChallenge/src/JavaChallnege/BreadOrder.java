@@ -32,10 +32,10 @@ public class BreadOrder {
 	public BreadOrder(String kind, int orderNumber) throws Exception {
 		switch (kind) {
 		case "‚ ‚ñƒpƒ“":
-			this.kind = BreadKind.BeanPasteBread;
+			this.kind = BreadKind.BEANPASTEBREAD;
 			break;
 		case "Hƒpƒ“":
-			this.kind = BreadKind.PlainBread;
+			this.kind = BreadKind.PLAINBREAD;
 			break;
 		default:
 			System.out.println(kind);

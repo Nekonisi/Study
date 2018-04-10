@@ -63,10 +63,10 @@ public class BreadFactory {
 		Bread bread = null;
 
 		switch (kind) {
-		case BeanPasteBread:
+		case BEANPASTEBREAD:
 			bread = new BeanPasteBread();
 			break;
-		case PlainBread:
+		case PLAINBREAD:
 			bread = new PlainBread();
 			break;
 		default:
@@ -94,7 +94,7 @@ public class BreadFactory {
 			int orderCount = breadOrder.getOrderNumber();
 
 			// 注文数文、パンの作成を行う。
-			for (int breadOrderCount = 0; breadOrderCount < orderCount; breadOrderCount++) {
+			for (int i = 0; i < orderCount; i++) {
 				breads.add(makeBread(kind));
 			}
 
@@ -105,7 +105,10 @@ public class BreadFactory {
 	/**
 	 * @return 現在の在庫量
 	 */
-	public List<Bread> getStock() {
+	public List<Bread> getStock() throws NullPointerException {
+		if (this.stock == null) {
+			throw new NullPointerException("パン工場のストックがNullです。");
+		}
 		return this.stock;
 	}
 }
