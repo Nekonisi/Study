@@ -5024,3 +5024,15 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.base/sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
 	at java.base/java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 37 more
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2018-04-10 13:13:16.451
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2018-04-10 13:13:27.130
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2018-04-10 13:14:14.894
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2018-04-10 13:14:26.852
+!MESSAGE No .vrapperrc or _vrapperrc found.

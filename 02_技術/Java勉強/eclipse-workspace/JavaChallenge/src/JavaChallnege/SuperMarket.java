@@ -59,7 +59,7 @@ public class SuperMarket {
 	 * @throws Exception
 	 */
 	public List<Bread> order(int[] breadOrder) throws Exception {
-		List<BreadOrder> breadorders = createBreadOrder(breadOrder);
+		List<BreadOrder> breadorders = createBreadOrders(breadOrder);
 		WholeSaler wholeSaler = WholeSaler.getWholeSaler();
 
 		this.stock = wholeSaler.order(breadorders);
@@ -71,7 +71,7 @@ public class SuperMarket {
 	 * @return パンの注文リスト(BreadOrder型)
 	 * @throws Exception
 	 */
-	private List<BreadOrder> createBreadOrder(int[] breadOrder) throws Exception {
+	private List<BreadOrder> createBreadOrders(int[] breadOrder) throws Exception {
 		List<BreadOrder> breadOrders = new ArrayList<BreadOrder>();
 		breadOrders.add(new BreadOrder("あんパン", breadOrder[0]));
 		breadOrders.add(new BreadOrder("食パン", breadOrder[1]));

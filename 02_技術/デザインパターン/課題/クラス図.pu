@@ -36,21 +36,24 @@ class WholeSaler{
 class BreadFactory {
 	-BreadFactory breadFactory
 	-List<Bread> stock
-	+getinstance(): BreadFactory
+	+getBreadFactory(): BreadFactory
 	+makeBreads(List<BreadOrder>): List<Bread>
 }
 
 interface Bread {
- -kind: String
  +getKind()
 }
 
 class BeanPasteBread {
 	-kind: String
+	+getKind(): String
+	+toString(): String
 }
 
 class PlainBread{
 	-kind: String
+	+getKind(): String
+	+toString(): String
 }
 
 SuperMarket --> WholeSaler: 発注
@@ -66,5 +69,7 @@ BreadFactory --> Bread: 製造
 BreadFactory --> WholeSaler: 納品
 BreadFactory <-- WholeSaler: 発注
 
+BeanPasteBread --> BreadKind: 所属
+PlainBread --> BreadKind: 所属
 @enduml
 

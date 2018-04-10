@@ -4,4 +4,6 @@
     <fullyQualifiedTypeName name="JavaChallnege.BreadOrder"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="JavaChallnege.WholeSaler"/>
+    <fullyQualifiedTypeName name="JavaChallnege.bread.BeanPasteBread"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 </qualifiedTypeNameHistroy>
