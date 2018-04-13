@@ -26,6 +26,6 @@ Factory Method
 - createTurtleとcreateBereメソッドの名前を覚えるのが面倒なのでどのクラスでも同じcreatePair()メソッドを作成する。
 - 実現する方法としては、亀クラス、熊クラスを汎化させたスーパークラスPairを定義し、createPair()の返り値をPairとする。
 
-![Facrory Methodパターン](../html/img/Facroty_Method/img1.jpg)
+![Facrory Methodパターン](../html/img/Factory\_Method/img1.jpg)
 
 以上
