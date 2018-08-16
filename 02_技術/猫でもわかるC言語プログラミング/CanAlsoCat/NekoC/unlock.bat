@@ -1,0 +1,3 @@
+@ECHO OFF
+CLS
+ATTRIB -R /S

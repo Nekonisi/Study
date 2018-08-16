@@ -1,0 +1,50 @@
+BODY {
+	background-color : White;
+	color : Black;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-size : 12px;
+}
+
+UL LI {
+	list-style-type : square;
+}
+
+A {
+	color : Black;
+	font-weight : bolder;
+}
+
+A:hover {
+	color : #C9C8B7;
+}
+
+TABLE {
+	border : none;
+	background-color : Black;
+	color : White;
+	text-align : center;
+	font-weight : bold;
+	padding-top : 1px;
+	padding-bottom : 1px;
+	width : 300px;
+	vertical-align : middle;
+	margin-top : 8px;
+}
+
+HR {
+	border : 1px solid #C9C8B7;
+}
+
+.small {
+	font-size : xx-small;
+}
+
+.smallfooter {
+	font-size : xx-small;
+	text-align : center;
+}
+
+.super {
+	font-size : xx-small;
+	vertical-align : super;
+}

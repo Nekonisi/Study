@@ -1,0 +1,84 @@
+H1{
+	color: #000000;
+
+}
+H2{
+	color: #000000;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #c0d0ff;
+	padding: 10px;
+
+}
+
+
+TABLE{
+	border-spacing: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+td{
+   
+
+}
+.ami{
+	font-size: small;
+	line-height: 1.75em;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #e8e8e8;
+	padding: 0.5em;
+	margin: 5px
+}
+body{
+	margin: 0px;
+	padding: 2%
+	border: 3px;
+	line-height: 1.5em;
+	background: #FFFFFF;
+	width: 98%;
+        margin: 2px;
+}
+
+
+img{
+	margin: 6px;
+	padding: 0px;
+
+}
+
+
+.importance 
+{
+	font-weight:bolder;
+}
+
+.func 
+{
+	font-style:italic;
+	font-weight:bold;
+}
+
+.code 
+{
+    font-family:monospace;
+	line-height: 1.2em;
+	border-width:0px;
+	border-style:solid;
+	background-color:#f0f0f0;
+    padding:12px;
+    margin:16px;
+    width:90%;
+}
+
+.dos 
+{
+	background-color:Black;
+	color:White;
+	border-style:solid;
+	border-width:2px;
+	border-color:Blue;
+}

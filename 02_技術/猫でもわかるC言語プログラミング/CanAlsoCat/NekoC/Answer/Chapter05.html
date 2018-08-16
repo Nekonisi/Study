@@ -1,0 +1,95 @@
+</html>
+<head>
+<title>『猫でもわかるC言語プログラミング』第5章 練習問題　解答</title>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<meta name="robots" content="index,follow">
+<META http-equiv=Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" HREF="maincss.css" TYPE="text/css">
+</head>
+<body>
+
+<br>
+<h1>猫でもわかるC言語プログラミング</h1>
+<h2>第5章　練習問題　解答</h2>
+1. 解答例
+<pre class=code>
+/* bmi.c */
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+	double bl, bw, bmi;
+
+	printf("身長(cm) :");
+	scanf("%lf", &bl);
+	printf("体重(kg) :");
+	scanf("%lf", &bw);
+
+	bmi = bw / ((bl / 100.0) * (bl / 100.0));
+	printf("あなたのBMIは%fです\n", bmi);
+	if (bmi >= 25.0)
+		printf("肥満に注意!\n");
+
+	return 0;
+}
+</pre>
+<p>
+scanf関数で、double型の数値を受け取るには変換仕様は%lfとなります。float型の場合は%fです。一方printf関数でdouble型やfloat型の数値を表示する変換仕様は%fです。scanf関数とprintf関数では変換仕様が若干異なる点に注意してください。
+</p>
+<br>
+2.<br>
+
+これは、ちょっと難しいです。A && B　という式があった場合、AもBも真の時、この式の値は1となります。もし、Aが偽であればBの真偽に関係なく式の値は0となります。この式はまず、Aが評価されもし0であれば、Bは評価されません。無駄を省いているわけですね。
+<p>
+a == 5 && b++のb++は評価されません。従ってlogical01.cを実行すると
+<br>
+b = 3
+<br>
+と表示されます。A || Bの場合はどうなるか実験してみてください。
+</p>
+<br>
+3. 解答例
+<pre class=code>
+/* sd.c */
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int point, n = 0;
+	double sum = 0.0, sum2 = 0.0, mean, sd;
+
+	while (1) {
+		printf("点数 :");
+		scanf("%d", &point);
+		if (point == -1)
+			break;
+		sum += point;
+		sum2 += point * point;
+		n++;
+	}
+
+	mean = (double)sum / (double)n;
+	sd = sqrt((sum2 - (mean) * (mean) * n)/(n - 1));
+
+	printf("人数 = %d, 平均点 = %.1f点, 標準偏差 = %.1f\n",
+		n, mean, sd);
+
+	return 0;
+}
+</pre>
+<p>
+なお、xのy乗を求めるにはpow関数というものもあります。
+<pre class=code>
+#include <math.h>
+double pow(
+   double x,
+   double y 
+);
+</pre>
+</p>
+</body>
+</html>
+

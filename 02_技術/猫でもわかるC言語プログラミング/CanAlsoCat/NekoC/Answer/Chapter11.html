@@ -1,0 +1,105 @@
+</html>
+<head>
+<title>『猫でもわかるC言語プログラミング』第11章 練習問題　解答</title>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<meta name="robots" content="index,follow">
+<META http-equiv=Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" HREF="maincss.css" TYPE="text/css">
+</head>
+<body>
+
+<br>
+<h1>猫でもわかるC言語プログラミング</h1>
+<h2>第11章　練習問題　解答</h2>
+1. 解答例<br>
+<pre class=code>
+/* inputint.c */
+
+#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+	int *lpn, *lptemp, i = 0, j;
+	char buf[32];
+
+	lpn = (int *)malloc(sizeof(int));
+	if (lpn == NULL) {
+		perror("メモリを確保できません\n");
+		return -1;
+	}
+
+	while (1) {
+		printf("[no.%d] = ", i);
+		gets(buf);
+		if (strcmp(buf, "") == 0)
+			break;
+		lptemp = realloc(lpn, sizeof(int) * (i + 1));
+		if (lptemp == NULL) {
+			perror("確保領域の変更失敗\n");
+			free(lpn);
+			return -2;
+		}
+		lpn = lptemp;
+		lpn[i] = atoi(buf);
+		i++;
+	}
+	for (j = 0; j < i; j++)
+		printf("[no.%d] = %d\n", j, lpn[j]);
+	free(lpn);
+
+	return 0;
+}
+</pre>
+<br>
+
+2. 解答例<br>
+
+<pre class=code>
+/* jan.c */
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main()
+{
+	char buf[16];
+	char *janken[] = {"グー", "チョキ", "パー"};
+	int man, comp, manwinno = 0, compwinno = 0;
+
+	srand((unsigned)time(NULL));
+
+	while (1) {
+		printf("You (グー:0 チョキ:1 パー:2) --- ");
+		gets(buf);
+		if (buf[0] != '0' && buf[0] != '1' && buf[0] != '2') {
+			printf("入力が不正です\n");
+			continue;
+		}
+		buf[1] = '\0';
+		man = atoi(buf);
+		comp = rand() % 3;
+		printf("You: %s, Comp: %s\n", janken[man], janken[comp]);
+		if (man == comp) {
+			printf("引き分けです\n");
+		} else if ((man == 0 && comp == 1) || (man == 1 && comp == 2) || (man == 2 && comp == 0)) {
+			printf("You win!\n");
+				manwinno++;
+		} else {
+			printf("Comp win!\n");
+			compwinno++;
+		}
+		printf("You : Comp = %d : %d\n", manwinno, compwinno);
+		if (abs(manwinno - compwinno) == 4)
+			break;
+	}
+
+}
+</pre>
+<br>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+BODY {
+	background-color : Black;
+	color : #CCCCCC;
+}
+
+TABLE {
+	background-color : Black;
+	color : White;
+	border : none;
+	width : 100%;
+	height : 110px;
+	margin-top : 0px;
+}
+
+.cellLeft {
+	text-align : left;
+	vertical-align : top;
+}
+
+.cellRight {
+	text-align : right;
+	vertical-align : bottom;
+}

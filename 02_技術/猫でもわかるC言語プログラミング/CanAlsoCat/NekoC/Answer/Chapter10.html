@@ -1,0 +1,141 @@
+</html>
+<head>
+<title>『猫でもわかるC言語プログラミング』第10章 練習問題　解答</title>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<meta name="robots" content="index,follow">
+<META http-equiv=Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" HREF="maincss.css" TYPE="text/css">
+</head>
+<body>
+
+<br>
+<h1>猫でもわかるC言語プログラミング</h1>
+<h2>第10章　練習問題　解答</h2>
+
+解答例<br>
+<pre class=code>
+/* addresscho.c */
+
+#define NO 20
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+typedef struct _data {
+	char name[32];
+	char address[128];
+	char tel[32];
+} MYDATA, *LPMYDATA;
+
+int inputmydata(LPMYDATA);
+int serarchmydata(LPMYDATA);
+
+int main()
+{
+	MYDATA data[NO];
+	int i;
+	char yesno[8];
+
+	memset(data, '\0', sizeof(data));
+
+	for (i = 0; i < NO; i++) {
+		if (inputmydata(&data[i]) == -1)
+			break;
+	}
+	while (1) {
+		serarchmydata(data);
+		printf("まだ検索しますか(Y/N)--");
+		gets(yesno);
+		if (yesno[0] == 'N' || yesno[0] == 'n')
+			break;
+	}
+
+	return 0;
+}
+
+int inputmydata(LPMYDATA lpData)
+{
+	char buf[32];
+
+	printf("氏名--- ");
+	gets(buf);
+	if (strcmp(buf, "") == 0)
+		return -1;
+	else
+		strcpy(lpData->name, buf);
+	printf("住所--- ");
+	gets(lpData->address);
+	printf("電話--- ");
+	gets(lpData->tel);
+
+	return 0;
+}
+
+int serarchmydata(LPMYDATA lpdata)
+{
+	char buf[32];
+	int i;
+
+	printf("検索する氏名--- ");
+	gets(buf);
+
+	for (i = 0; i < NO; i++) {
+		if (strcmp(lpdata[i].name, "")) {
+			if (strstr(lpdata[i].name, buf)) {
+				printf("氏名 = %s\n", lpdata[i].name);
+				printf("住所 = %s\n", lpdata[i].address);
+				printf("電話 = %s\n", lpdata[i].tel);
+				printf("---------------------------\n");
+			}
+		} else {
+			break;
+		}
+	}
+	return 0;
+}
+</pre>
+
+実行結果<br>
+
+データを入力する時２０人に達していなくても氏名入力で何も入力せずにエンターキーを押すと、検索に進めます。
+<pre class=code>
+氏名--- 粂井太郎
+住所--- 北海道旭川市
+電話--- 0166-00-0000
+氏名--- 加藤太郎
+住所--- 兵庫県神戸市
+電話--- 0000-123-4567
+氏名--- 中井太郎
+住所--- 東京都港区
+電話--- 030-0000-4321
+氏名---
+検索する氏名--- 太郎
+氏名 = 粂井太郎
+住所 = 北海道旭川市
+電話 = 0166-00-0000
+---------------------------
+氏名 = 加藤太郎
+住所 = 兵庫県神戸市
+電話 = 0000-123-4567
+---------------------------
+氏名 = 中井太郎
+住所 = 東京都港区
+電話 = 030-0000-4321
+---------------------------
+まだ検索しますか(Y/N)--y
+検索する氏名--- 井
+氏名 = 粂井太郎
+住所 = 北海道旭川市
+電話 = 0166-00-0000
+---------------------------
+氏名 = 中井太郎
+住所 = 東京都港区
+電話 = 030-0000-4321
+---------------------------
+まだ検索しますか(Y/N)--n
+</pre>
+<br>
+</body>
+</html>
+
