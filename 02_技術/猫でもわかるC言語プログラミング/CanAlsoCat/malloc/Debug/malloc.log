@@ -1,0 +1,11 @@
+﻿2018/08/28 16:10:18 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\nl_konishi\Documents\GitHub\Study\02_技術\猫でもわかるC言語プログラミング\CanAlsoCat\malloc\malloc.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\nl_konishi\documents\github\study\02_技術\猫でもわかるc言語プログラミング\canalsocat\malloc\source.cpp(10): error C2660: 'calloc' : 関数に 1 個の引数を指定できません。
+     1>プロジェクト "C:\Users\nl_konishi\Documents\GitHub\Study\02_技術\猫でもわかるC言語プログラミング\CanAlsoCat\malloc\malloc.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
+
+ビルドに失敗しました。
+
+経過時間 00:00:00.48
