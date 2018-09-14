@@ -2,7 +2,14 @@
 
 """
 ==============
-デッキクラス
+Const
 ==============
 """
-CARD_FORMAT = '[ {0[0]:2} | {0[1]:2} ]'
+
+CARD_FORMAT = '[ {0} | {1} ]'
+MENU = '''
+   choose your action
+     [h]: hit
+     [s]: stand
+     [q]: quit
+   '''

@@ -1,9 +1,10 @@
 # coding = utf-8
 
+from Const import CARD_FORMAT
 
 """
 ==========
-カードクラス
+Card Class
 ==========
 """
 
@@ -14,5 +15,7 @@ class Card:
         self.__number = number
 
     def open(self):
-        return self.__suit, self.__number
+        return CARD_FORMAT.format(self.__suit, self.__number)
 
+    def get_number(self):
+        return self.__number

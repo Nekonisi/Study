@@ -2,7 +2,7 @@
 
 """
 ==============
-デッキクラス
+Deck Class
 ==============
 """
 from Card import Card
@@ -12,16 +12,17 @@ import random
 
 class Deck:
     __cards = list()
+    __number = __cards
 
     def __init__(self):
         for suit in ['H', 'D', 'C', 'S']:
             for number in range(1, 13+1, 1):
-                card = Card(suit, number)
-                self.__cards.append(card)
+                __card = Card(suit, number)
+                self.__cards.append(__card)
 
     def shuffle(self):
         random.shuffle(self.__cards)
 
-    def open(self):
-        for card in self.__cards:
-            print(CARD_FORMAT.format(card.open()))
+    def pop(self):
+        card = self.__cards.pop()
+        return card
