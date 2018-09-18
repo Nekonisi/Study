@@ -5,12 +5,33 @@ from Dealer import Dealer
 from Player import Player
 from Const import *
 
-
 '''
 =============
 main def
 =============
 '''
+
+
+def command():
+    while True:
+        print(MENU)
+        ans = input("command >> ")
+        if ans == 'h':
+            bast_flg, blackjack_flg = player.hit(deck)
+            if bast_flg:
+                break
+            elif blackjack_flg:
+                print('BlackJack!')
+                break
+        elif ans == 's':
+            player.stand()
+        elif ans == 'q':
+            break
+        else:
+            print("invalid answer! die!")
+        player.show_hand()
+
+
 if __name__ == '__main__':
     # program start here!
 
@@ -28,23 +49,14 @@ if __name__ == '__main__':
 
     dealer.first_draw(deck)
     player.first_draw(deck)
-    player.hit(deck)
 
     # game
     dealer.show_hand(True)
     player.show_hand()
 
-    while True:
-        print(MENU)
-        ans = input("command >> ")
-        if ans == 'h':
-            over = player.hit(deck)
-        elif ans == 's':
-            player.stand()
-        elif ans == 'q':
-            break
-        else:
-            print("invalid answer! die!")
-        player.show_hand()
+    # Player's turn
+    command()
 
-
+    # dealer's turn
+    dealer.show_hand(False)
+    player.show_hand()
