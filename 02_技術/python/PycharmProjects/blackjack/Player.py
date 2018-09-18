@@ -13,17 +13,15 @@ Player Class
 class Player(Human):
 
     def __init__(self):
-        self.name = ''
-        self.hand = list()
-        self.score = 0
+        super().__init__()
 
     def get_name(self):
-        return self.name
+        return self._name
 
     def greet(self):
         print('You: My name is ...', end="")
-        self.name = str(input())
-        return self.name
+        self._name = str(input())
+        return self._name
 
     def hit(self, deck: Deck):
         return super().hit(deck)
@@ -35,12 +33,12 @@ class Player(Human):
         super().stand()
 
     def show_hand(self):
-        print(self.name + '\'s hand is', end=' ')
+        print(self._name + '\'s hand is', end=' ')
 
-        for card in self.hand:
+        for card in self._hand:
             print(card.open(), end=' ')
 
         self.__show_score()
 
     def __show_score(self):
-        print('(' + str(self.score) + ')')
+        print('(' + str(self._score) + ')')

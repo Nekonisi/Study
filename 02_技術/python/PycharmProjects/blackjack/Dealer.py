@@ -14,9 +14,8 @@ Dealer Class
 class Dealer(Human):
 
     def __init__(self):
-        self.hand = list()
-        self.score = 0
-        self.name = 'Dealer'
+        super().__init__()
+        self._name = 'Dealer'
 
     @staticmethod
     def greet(player: Human):
@@ -47,25 +46,25 @@ class Dealer(Human):
         super().first_draw(deck)
 
     def show_hand(self, flg: bool):
-        print(self.name + ': My hand is ', end=' ')
+        print(self._name + ': My hand is ', end=' ')
 
         if flg:
-            print(self.hand[0].open(), end=' ')
+            print(self._hand[0].open(), end=' ')
         else:
-            for card in self.hand:
+            for card in self._hand:
                 print(card.open(), end=' ')
 
         self.__show_score(flg)
 
     def __show_score(self, flg: bool) -> bool:
         if flg:
-            score = self.score - self.hand[-1].get_number()
+            score = self._score - self._hand[-1].get_number()
             print('(' + str(score) + ')')
         else:
-            print('(' + str(self.score) + ')')
+            print('(' + str(self._score) + ')')
 
     def action(self, deck: Deck) -> bool:
-        if self.score <= 15:
+        if self._score <= 15:
             self.hit(deck)
             return True
         else:
