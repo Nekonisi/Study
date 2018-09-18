@@ -1,4 +1,4 @@
-#!C:\Users\nl_konishi\PycharmProjects\brackjack\venv\Scripts\python.exe
+#!C:\Users\nekonisi\Documents\GitHub\Study\02_ãZèp\python\PycharmProjects\brackjack\venv\Scripts\python.exe -x
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==10.0.1','console_scripts','pip'
 __requires__ = 'pip==10.0.1'
 import re

@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\nl_konishi\PycharmProjects\brackjack\venv"
+$env:VIRTUAL_ENV="C:\Users\nekonisi\Documents\GitHub\Study\02_技術\python\PycharmProjects\brackjack\venv"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

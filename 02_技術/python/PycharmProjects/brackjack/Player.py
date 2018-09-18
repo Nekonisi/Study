@@ -25,14 +25,14 @@ class Player(Human):
         self.name = str(input())
         return self.name
 
-    def hit(self, deck):
+    def hit(self, deck: Deck):
         return super().hit(deck)
 
     def first_draw(self, deck) -> Deck:
         super().first_draw(deck)
 
     def stand(self):
-        super().stand(self.__name)
+        super().stand()
 
     def show_hand(self):
         print(self.name + '\'s hand is', end=' ')

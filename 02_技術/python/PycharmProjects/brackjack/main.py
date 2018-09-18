@@ -3,6 +3,7 @@
 from Deck import Deck
 from Dealer import Dealer
 from Player import Player
+from interface.human import Human
 from Const import *
 
 '''
@@ -25,11 +26,21 @@ def command():
                 break
         elif ans == 's':
             player.stand()
+            break
         elif ans == 'q':
             break
         else:
             print("invalid answer! die!")
         player.show_hand()
+
+
+def judge(player1: Human, player2: Human):
+    if player1.score == player2.score:
+        print('draw game')
+    elif player1.score > player2.score:
+        print('{} won'.format(player1.name))
+    elif player2.score < player1.score:
+        print('{} won'.format(player2.name))
 
 
 if __name__ == '__main__':
@@ -58,5 +69,10 @@ if __name__ == '__main__':
     command()
 
     # dealer's turn
+    while dealer.action(deck):
+        print('a')
+
     dealer.show_hand(False)
     player.show_hand()
+
+    judge(player, dealer)

@@ -44,6 +44,6 @@ class Human(object):
         print(self.name + ' : stand')
 
     @abstractmethod
-    def first_draw(self, deck) -> Deck:
+    def first_draw(self, deck: Deck):
         self.hit(deck)
         self.hit(deck)

@@ -1,4 +1,4 @@
-#!C:\Users\nl_konishi\PycharmProjects\brackjack\venv\Scripts\python.exe
+#!C:\Users\nekonisi\Documents\GitHub\Study\02_ãZèp\python\PycharmProjects\brackjack\venv\Scripts\python.exe -x
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==39.1.0','console_scripts','easy_install'
 __requires__ = 'setuptools==39.1.0'
 import re

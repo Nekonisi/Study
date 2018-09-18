@@ -19,7 +19,7 @@ class Dealer(Human):
         self.name = 'Dealer'
 
     @staticmethod
-    def greet(player)-> Player:
+    def greet(player: Human):
         ignore_count = 0
         if player.get_name() == '':
             print('Dealer: Welcome!')
@@ -37,16 +37,16 @@ class Dealer(Human):
         else:
             print('Dealer: OK! {} Let\'s play game'.format(player.get_name()))
 
-    def hit(self, deck):
+    def hit(self, deck: Deck):
         super().hit(deck)
 
-    def stand(self, deck):
+    def stand(self, deck: Deck):
         super().stand()
 
-    def first_draw(self, deck)->Deck:
+    def first_draw(self, deck: Deck):
         super().first_draw(deck)
 
-    def show_hand(self, flg):
+    def show_hand(self, flg: bool):
         print(self.name + ': My hand is ', end=' ')
 
         if flg:
@@ -57,9 +57,17 @@ class Dealer(Human):
 
         self.__show_score(flg)
 
-    def __show_score(self, flg)->bool:
+    def __show_score(self, flg: bool) -> bool:
         if flg:
             score = self.score - self.hand[-1].get_number()
             print('(' + str(score) + ')')
         else:
             print('(' + str(self.score) + ')')
+
+    def action(self, deck: Deck) -> bool:
+        if self.score <= 15:
+            self.hit(deck)
+            return True
+        else:
+            self.stand(deck)
+            return False
